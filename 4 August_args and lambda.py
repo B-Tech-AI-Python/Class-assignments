@@ -11,6 +11,7 @@ favourites("Ishani","Python","Mathematics", "English", "Data Structures in C")
 
 #%% lambda functions
 def addition(*args):
+    '''Arguments passed through it are added.'''
     print("The sum of the given numbers are: ",sum(args))
 
 addition(1,2,3,4)
@@ -20,13 +21,8 @@ print("The sum of the given numbers using lambda add are: ",lambda_add(4,5,1))
 
 #%% using lambda functions along with defined functions
 def sort(*args):
-    '''
-    Docstring
-    ----------
-    This function sorts all the arguments passed through it
-    -------
+    '''Arguments passed through it are sorted.'''
 
-    '''
     print("\nThis is my sorted list of numbers:\n")
     for num in sorted(args):
         print(num, " ", end="")
@@ -44,6 +40,8 @@ print(sort(x,y,add(x,y),diff(x,y)))
 
 #%% increment
 def increment(y):
+    '''Argument passed is incremented it.'''
+
     return (lambda y:y+1)(y)
 
 a = int(input("Enter a number to be incremented: "))
