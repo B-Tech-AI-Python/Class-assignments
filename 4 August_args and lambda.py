@@ -54,3 +54,17 @@ twice = lambda x:x*2
 print(twice(9))
 
 print((lambda x:x*2)(90))
+
+#%% passing lambda function as an argument to another function
+multiply = lambda x,y:x*y
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+def cube(a):
+    '''Arguments passed through it are cubed.'''
+
+    return a**3
+
+print(f"The multiplication value of {num1} x {num2} = {multiply(num1, num2)}")
+print("The cubed value is: ",cube(multiply(num1, num2)))
