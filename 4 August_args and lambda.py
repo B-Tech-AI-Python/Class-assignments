@@ -16,6 +16,7 @@ def addition(*args):
 
 addition(1,2,3,4)
 
+print(addition.__doc__)
 lambda_add = lambda x,y,z : x+y+z
 print("The sum of the given numbers using lambda add are: ",lambda_add(4,5,1))
 
