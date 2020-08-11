@@ -2,22 +2,26 @@
 print("Good")
 print("Morning")
 
-#%% print in same line
+# %% print in same line
+print()
 print("Good", end=" ")
 print("Morning")
 
-#%% str and int cannot be concantenated
+# %% str and int cannot be concantenated
+print()
 str = "hello" + '007'
 print(str)
 
-#%% id
+# %% id
+print()
 str1 = "elephants are amazing"
 str2 = "elephants are amazing"
 str3 = "Hello"
 
 print(id(str1), id(str2), id(str3))
 
-#%% methods
+# %% methods
+print()
 str1 = "elephants are amazing"
 
 print(str1.capitalize())
@@ -54,7 +58,8 @@ print(str1.isidentifier())
 print('----------------------------------------------------------------------')
 print(list(enumerate(str1)))
 
-#%% slicing
+# %% slicing
+print()
 str1 = "elephants are amazing"
 
 print(str1[0:])
@@ -67,20 +72,25 @@ print(str1[-10:-3:1])
 print('----------------------------------------------------------------------')
 print(str1[::-1])
 
-#%% ASCII
+# %% ASCII
+print()
 print("The alphabet and it's ASCII value are:\n")
-for i in range(ord('A'),ord('Z')+1):
+for i in range(ord('A'), ord('Z')+1):
     print(chr(i), ord(chr(i)), '&', chr(i).lower(), ord(chr(i).lower()))
 
-#%%
+# %%
+print()
+
+
 def table(num):
     print(f"\nThe table for {num} is:\n")
 
-    for i in range(1,10):
+    for i in range(1, 10):
         print(f" {i}  x {num} = {i*num}")
-    for i in range(10,11):
+    for i in range(10, 11):
         print(f" {i} x {num} = {i*num}")
     print("-----------------")
+
 
 table(5)
 table(10)
