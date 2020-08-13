@@ -83,15 +83,24 @@ print()
 print("---Concatenation---")
 
 
-def concatenate(string):
-    pass
+def concatenate(input_string):
+    if len(input_string) == 6:
+        print("You have exceeded word limit of 50 characters!")
+        return input_string
+
+    str = input("Enter string to concatenate: ")
+    input_string += concatenate(str)
+    return input_string
 
 
-string1 = input("Enter your first string: ")
-string2 = input("Enter your second string: ")
+input_string = ' '
+input_string = concatenate(input_string)
 
+print(input_string)
 
 # %%  menu driven program using functions to perform calculator operations
+
+
 def calc(choice, num1, num2):
     if choice == 1:
         return num1+num2

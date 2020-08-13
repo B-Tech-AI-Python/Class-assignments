@@ -1,3 +1,5 @@
+import pandas as pd
+
 # print in different lines
 print("Good")
 print("Morning")
@@ -80,20 +82,52 @@ for i in range(ord('A'), ord('Z')+1):
 
 # %%
 print()
+print("Multiplication tables\n")
 
 
 def table(num):
-    print(f"\nThe table for {num} is:\n")
 
-    for i in range(1, 10):
-        print(f" {i}  x {num} = {i*num}")
-    for i in range(10, 11):
-        print(f" {i} x {num} = {i*num}")
-    print("-----------------")
+    lis = []
+    for i in range(1, 11):
+        lis.append(f"{num} x {i}")
+
+    return lis
 
 
-table(5)
-table(10)
-table(20)
-table(25)
-table(100)
+def values(num):
+
+    lis = []
+    for i in range(1, 11):
+        lis.append(i*num)
+
+    return lis
+
+
+tableOf5 = {'Table': table(5), 'Value': values(5)}
+tableOf10 = {'Table': table(10), 'Value': values(10)}
+tableOf20 = {'Table': table(20), 'Value': values(20)}
+tableOf25 = {'Table': table(25), 'Value': values(25)}
+tableOf50 = {'Table': table(50), 'Value': values(50)}
+tableOf100 = {'Table': table(100), 'Value': values(100)}
+
+
+df5 = pd.DataFrame(tableOf5, columns=['Table', 'Value'])
+df10 = pd.DataFrame(tableOf10, columns=['Table', 'Value'])
+df20 = pd.DataFrame(tableOf20, columns=['Table', 'Value'])
+df25 = pd.DataFrame(tableOf25, columns=['Table', 'Value'])
+df50 = pd.DataFrame(tableOf50, columns=['Table', 'Value'])
+df100 = pd.DataFrame(tableOf100, columns=['Table', 'Value'])
+
+
+print(df5)
+print()
+print(df10)
+print()
+print(df20)
+print()
+print(df25)
+print()
+print(df50)
+print()
+print(df100)
+print()
