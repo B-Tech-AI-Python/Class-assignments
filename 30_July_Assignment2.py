@@ -1,5 +1,7 @@
-# Greatest common divisor
 import time
+import random
+
+# Greatest common divisor
 print("---Greatest common divisor---")
 
 
@@ -13,7 +15,8 @@ def gcd(x, y):
 
 num1 = int(input("Enter first number: "))
 num2 = int(input("Enter second number: "))
-print(f"\nThe greatest common divisor of {num1} and {num2} is {gcd(num1,num2)}")
+print()
+print(f"The greatest common divisor of {num1} and {num2} is {gcd(num1,num2)}")
 
 # %% exponential
 print()
@@ -84,17 +87,18 @@ print("---Concatenation---")
 
 
 def concatenate(input_string):
-    if len(input_string) == 6:
-        print("You have exceeded word limit of 50 characters!")
-        return input_string
 
-    str = input("Enter string to concatenate: ")
-    input_string += concatenate(str)
+    letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    numbers = '0123456789'
+
+    input_string += random.choice(" ".join([letters, letters.lower(), numbers]))
+
     return input_string
 
 
 input_string = ' '
-input_string = concatenate(input_string)
+for i in range(13):
+    input_string = concatenate(input_string)
 
 print(input_string)
 
@@ -137,7 +141,7 @@ while True:
 # %% lambda function to find smallest number
 print()
 print("---Smallest number---")
-def small(x, y): return print("\nThey are equal!") if x == y else print(
+small = lambda x, y: print("\nThey are equal!") if x == y else print(
     "\nThe smaller number is", min(x, y))
 
 
@@ -149,8 +153,8 @@ small(num1, num2)
 time.sleep(1)
 print()
 print("---Recursive lambda---")
-def func(x): return 1 if x < 1 else func(x/2) + 1
+func = lambda x: 1 if x < 1 else func(x/2) + 1
 
 
-for num in range(1000):
-    print(func(num), end=" ")
+for num in range(10):
+    print(num, func(num))
