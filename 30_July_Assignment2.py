@@ -141,7 +141,7 @@ while True:
 # %% lambda function to find smallest number
 print()
 print("---Smallest number---")
-small = lambda x, y: print("\nThey are equal!") if x == y else print(
+def small(x, y): return print("\nThey are equal!") if x == y else print(
     "\nThe smaller number is", min(x, y))
 
 
@@ -153,8 +153,10 @@ small(num1, num2)
 time.sleep(1)
 print()
 print("---Recursive lambda---")
-func = lambda x: 1 if x < 1 else func(x/2) + 1
+def func(x): return 1 if x < 1 else func(x/2) + 1
 
 
 for num in range(10):
     print(num, func(num))
+
+time.sleep(3)

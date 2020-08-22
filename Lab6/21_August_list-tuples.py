@@ -115,7 +115,7 @@ else:
     print("No matching elements!")
 
 # %%
-list_of_strings = list(str(item) for item in input("Enter the elements of list: ").split())
+list_of_strings = list(item for item in input("Enter the elements of list: ").split())
 
 def repeat3(list_of_strings):
     repeated_items = []
@@ -131,11 +131,11 @@ def repeat3(list_of_strings):
 print(repeat3(list_of_strings))
 
 # %%
-my_tuple7 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+string_list = list(item for item in input("Enter the elements of list: ").split())
 
-choice = int(input("Enter limit for numbers: "))
+n = int(input("Enter limit: "))
 
-print("\nThe greater elements: ")
-for i in my_tuple7:
-    if i > choice:
+print("\nThe longer elements: ")
+for i in string_list:
+    if len(i) > n:
         print(i)
