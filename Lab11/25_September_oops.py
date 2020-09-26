@@ -17,27 +17,18 @@ class Employee:
         
 # display employee count
 def employeeCount():
-    print("The number of employees in the organisation are:",Employee.count)
+    print("\nThe number of employees in the organisation are:",Employee.count)
 
-
-employeeCount()
-
-print()
-emp1 = Employee("One", "HOD", 100)
+emp1 = Employee(input("Enter name: "), input("Enter desgination: "), int(input("Enter salary: ")))
 emp1.display()
 
-print()
-employeeCount()
-
-print()
-emp2 = Employee("Two", "Faculty", 100)
+emp2 = Employee(input("Enter name: "), input("Enter desgination: "), int(input("Enter salary: ")))
 emp2.display()
 
-print()
 employeeCount()
 # %%
 class Circle:
-    pi = 3.141593
+    pi = 3.1416
     
     def __init__(self,radius):
         self.radius = radius
