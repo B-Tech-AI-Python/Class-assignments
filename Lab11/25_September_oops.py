@@ -144,14 +144,14 @@ while True:
 
 # %%
 class Store:
-    
+
     items = {}
-    
+
     def __init__(self, name, code, price):
         self.name = name
         self.code = code
         self.price = price
-        
+
         Store.items[self.code] = [self.name, self.price]
 
 Book = Store("Book", 1, 100)
@@ -178,7 +178,7 @@ while True:
             sold[buy][1] += Store.items[buy][1]*quantity
         else:
             sold[buy] = [Store.items[buy][0], Store.items[buy][1], quantity, Store.items[buy][1]*quantity]
-        
+
         choice = input("Do you want any more items? y or n: ")
         if choice.lower().startswith("y"):
             continue
