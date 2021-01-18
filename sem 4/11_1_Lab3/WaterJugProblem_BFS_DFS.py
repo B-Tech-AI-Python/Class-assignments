@@ -5,7 +5,7 @@ def get_index(node):
     """Returns a key value for a given node.
 
     Attributes:
-        Node (list): list of two integers representing current state of the jugs.
+        node (list): list of two integers representing current state of the jugs.
     """
 
     return pow(7, node[0]) * pow(5, node[1])
@@ -95,7 +95,7 @@ def been_there(node, check_dict):
 
     print("Checking if {0} is visited before...".format(node))
 
-    return check_dict.get(node[0], False)
+    return check_dict.get(get_index(node), False)
 
 
 def next_transitions(jugs, path, check_dict):
@@ -160,7 +160,7 @@ def next_transitions(jugs, path, check_dict):
 
     # 6. empty second jug
     node.append(a)
-    node.append(b)
+    node.append(0)
     if not been_there(node, check_dict):
         next_nodes.append(node)
 
