@@ -105,6 +105,7 @@ class Puzzle:
 
         solution.append(self.action)
         solution_states.append(self)
+
         path = self
         while path.parent != None:
             path = path.parent
