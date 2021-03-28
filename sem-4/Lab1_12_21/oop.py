@@ -2,6 +2,7 @@ from random import sample
 
 numbers = '0123456789'
 
+
 class Bank:
 
     def __init__(self, name, balance=0):

@@ -3,6 +3,7 @@ import numpy as np
 #np.random.seed(0)
 
 
+
 def sigmoid(x):
     """Implementing the sigmoid function for x.
     sig(x) = 1/(1+e^-x)
@@ -16,6 +17,7 @@ def sigmoid(x):
     return 1 / (1 + (np.exp(-x)))
 
 
+
 def sigmoid_derivative(x):
     """Implementing the sigmoid function for x.
     sig'(x) = x * (1-x)
@@ -27,6 +29,7 @@ def sigmoid_derivative(x):
         the derivative of sigmoid function.
     """
     return x * (1-x)
+
 
 
 outputs = {'and': [[0], [0], [0], [1]], 'nand': [[1], [1], [1], [0]], 'or': [[1], [1], [1], [0]],
@@ -54,10 +57,12 @@ while True:
         print('Invalid logic gate, try again!\n')
 
 
+
 #Set the Input datasets
-inputs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+inputs = np.array([[0,0],[0,1],[1,0],[1,1]])
 #Set the expected output
 expected_output = np.array(output_list)
+
 
 
 # Set the epochs
@@ -68,6 +73,7 @@ lr = 0.1
 inputLayerNeurons = 2
 hiddenLayerNeurons = 2
 outputLayerNeurons = 1
+
 
 
 # Random weights and bias initialization
@@ -83,6 +89,7 @@ output_weights = np.random.uniform(
 output_bias = np.random.uniform(size=(1, outputLayerNeurons))
 
 
+
 # Display the hidden_weights, hidden_bias, output_weights, and output_bias
 print("Initial hidden weights: ", end='')
 print(*hidden_weights)
@@ -92,6 +99,7 @@ print("Initial output weights: ", end='')
 print(*output_weights)
 print("Initial output biases: ", end='')
 print(*output_bias)
+
 
 
 # Training algorithm
@@ -119,17 +127,16 @@ for _ in range(epochs):
     error_hidden_layer = d_predicted_output.dot(output_weights.T)
 
     # Calculate the derivate of hidden layer by performing error_hidden_layer * sigmoid_derivative(hidden_layer_output)
-    d_hidden_layer = error_hidden_layer * \
-        sigmoid_derivative(hidden_layer_output)
+    d_hidden_layer = error_hidden_layer *         sigmoid_derivative(hidden_layer_output)
 
     # Updating Weights and Biases
     # Update the output weights as output_weights = output_weights + hidden_layer_output.T.dot(d_predicted_output) * lr
-    output_weights = output_weights + \
-        hidden_layer_output.T.dot(d_predicted_output) * lr
+    output_weights = output_weights +         hidden_layer_output.T.dot(d_predicted_output) * lr
     output_bias += np.sum(d_predicted_output, axis=0, keepdims=True) * lr
     # Update the hidden weights as hidden_weights = height_weights + inputs.T.dot(d_hidden_layer) * lr
     hidden_weights = hidden_weights + inputs.T.dot(d_hidden_layer) * lr
     hidden_bias += np.sum(d_hidden_layer, axis=0, keepdims=True) * lr
+
 
 
 # Display the hidden_weights, hidden_bias, output_weights and output_bias after training
@@ -143,6 +150,9 @@ print("Final output bias: ", end='')
 print(*output_bias)
 
 
+
 # The predicted output
 print(f"\nOutput from neural network after {epochs} epochs: ", end='')
 print(*predicted_output)
+
+

@@ -1,3 +1,40 @@
+"""Lab 9:Preprocessing Techniques in NLP Using NLTK package
+
+In this lab, we will be exploring how to preprocess tweets for sentiment analysis.
+
+Setup
+In this lab, we will be using the [Natural Language Toolkit (NLTK)](http://www.nltk.org/howto/twitter.html) package, an open-source Python library for natural language processing. It has modules for collecting, handling, and processing Twitter data.
+For this exercise, we will use a Twitter dataset that comes with NLTK. This dataset has been manually annotated and serves to establish baselines for models quickly. Let us import them now as well as a few other libraries we will be using.
+
+## About the Twitter dataset
+The sample dataset from NLTK is separated into positive and negative tweets. It contains 5000 positive tweets and 5000 negative tweets exactly. The exact match between these classes is not a coincidence. The intention is to have a balanced dataset. That does not reflect the real distributions of positive and negative classes in live Twitter streams. It is just because balanced datasets simplify the design of most computational methods that are required for sentiment analysis. However, it is better to be aware that this balance of classes is artificial. In a local computer however, you can download the data by doing:
+
+## Preprocess raw text for Sentiment analysis
+Data preprocessing is one of the critical steps in any machine learning project. It includes cleaning and formatting the data before feeding into a machine learning algorithm. For NLP, the preprocessing steps are comprised of the following tasks:
+    
+### Tokenizing the string
+To tokenize means to split the strings into individual words without blanks or tabs. In this same step, we will also convert each word in the string to lower case. The [tokenize](https://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize.casual) module from NLTK allows us to do these easily:
+
+### Lowercasing
+
+### Removing stop words and punctuation
+The next step is to remove stop words and punctuation. Stop words are words that don't add significant meaning to the text. You'll see the list provided by NLTK when you run the cells below.
+
+### Stemming
+Stemming is the process of converting a word to its most general form, or stem. This helps in reducing the size of our vocabulary.
+Consider the words: 
+* **learn**
+* **learn**ing
+* **learn**ed
+* **learn**t
+All these words are stemmed from its common root **learn**. However, in some cases, the stemming process produces words that are not correct spellings of the root word. For example, **happi** and **sunni**. That's because it chooses the most common stem for related words. For example, we can look at the set of words that comprises the different forms of happy:
+* **happ**y
+* **happi**ness
+* **happi**er
+We can see that the prefix **happi** is more commonly used. We cannot choose **happ** because it is the stem of unrelated words like **happen**.
+NLTK has different modules for stemming and we will be using the [PorterStemmer](https://www.nltk.org/api/nltk.stem.html#module-nltk.stem.porter) module which uses the [Porter Stemming Algorithm](https://tartarus.org/martin/PorterStemmer/). Let's see how we can use it in the cell below.
+"""
+
 import nltk                                # Python library for NLP
 from nltk.corpus import twitter_samples    # sample Twitter dataset from NLTK
 import matplotlib.pyplot as plt            # library for visualization

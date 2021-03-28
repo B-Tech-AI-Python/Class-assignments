@@ -24,4 +24,3 @@ else:
 
 if len(user_name) >= 6:
     print("\nYou have a long name!")
-
